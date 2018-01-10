@@ -26,10 +26,10 @@ class Bar2_return(ctypes.Structure):
 
 # 利用する関数の定義をやる。なぜならば、.hがincludeできないからだ。
 lib = ctypes.cdll.LoadLibrary('./libfoo.so')
-lib.Asdf.restype = GoString
+lib.Asdf.restype = int
 
 
 # goでstringを戻すケース。
 ret = lib.Asdf()
-print ret.value()
+print(ret)
 
